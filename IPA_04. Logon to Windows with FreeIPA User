@@ -6,6 +6,7 @@ ipa-getkeytab -s ipa.kbuor.local -p host/cli02.kbuor.local -e arcfour-hmac -k /e
 (Note your password)
 
 # Configure on Windows
+# IMPORTANT!!! Rename Computer as a same name with dns recrod added in IPA Server, Ex: cli02.kbuor.local. Only rename to hostname, not FQDN (Ex: cli02)
 # Run Command prompt or PowerShell with Admin Priveleges
 
 ksetup /setdomain KBUOR.LOCAL
