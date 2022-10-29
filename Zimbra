@@ -16,3 +16,6 @@ yum -y install unzip net-tools sysstat openssh-clients perl-core libaio nmap-nca
 wget https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3869.RHEL7_64.20190918004220.tgz
 # Extract downloaded file
 tar -xzvf zcs-8*
+cd zcs-8*
+chmod +x install.sh
+# Recommend run script via tmux
