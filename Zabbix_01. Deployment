@@ -16,4 +16,18 @@ vi /etc/httpd/conf/httpd.conf
       # add follows to the end
       # server's response header
       ServerTokens Prod
+
+# Remove Welcome Page
+mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.bak
+
+# Create new homepage
+vi /var/www/html/index.html
+
+      <html>
+            <body>
+                  <h1>Welcome To Robusta</h1>
+            </body>
+      </html>
       
+
+
