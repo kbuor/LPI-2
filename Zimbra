@@ -80,3 +80,9 @@ _DMARC IN v=DMARC1; p=reject; pct=100; rua=mailto:admin@kbuor.website
 # SPF:
 @ IN v=spf1 ip4:103.89.85.24 include:kbuor.website mx -all
 # DKIM
+
+
+# Secure SSL for Zimbra
+# Use certbot to get SSL Certificate
+
+mkdir /opt/zimbra/ssl/letsencrypt
