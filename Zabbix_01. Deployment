@@ -96,5 +96,9 @@ mysql -u root -p
 > EXIT;
 
 zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u zbuser -p zabbix2
+vi /etc/zabbix_server.conf
+
+      # Edit line 89, 101, 117, 125 (DB connection info)
+
 systemctl restart zabbix-server
 systemctl restart httpd
