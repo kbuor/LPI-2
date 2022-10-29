@@ -1,7 +1,7 @@
 # Prepare on IPA Server
 ipa host-add cli02.kbuor.local --ip-address=10.0.14.13
 ipa dnsrecord-add kbuor.local cli02 --a-rec 10.0.14.13
-ipa dnsrecord-add 14.0.10.in-addr.arpa 13 --ptr-record cli02.kbuor.local
+ipa dnsrecord-add 14.0.10.in-addr.arpa 13 --ptr-record cli02.kbuor.local.
 ipa-getkeytab -s ipa.kbuor.local -p host/cli02.kbuor.local -e arcfour-hmac -k /etc/krb5.keytab.cli02 -p
 (Note your password)
 
