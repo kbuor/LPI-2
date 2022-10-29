@@ -84,5 +84,15 @@ _DMARC IN v=DMARC1; p=reject; pct=100; rua=mailto:admin@kbuor.website
 
 # Secure SSL for Zimbra
 # Use certbot to get SSL Certificate
-
+zmcontrol stop
 mkdir /opt/zimbra/ssl/letsencrypt
+cp /etc/letsencrypt/live/mail.kbuor.website/* /opt/zimbra/ssl/letsencrypt/
+chown zimbra:zimbra /opt/zimbra/ssl/letsencrypt/*
+su zimbra
+cd /opt/zimbra/ssl/letsencrypt
+/opt/zimbra/bin/zmcertmgr verifycrt comm privkey.pem cert.pem chain.pem
+cp /opt/zimbra/ssl/letsencrypt/privkey.pem /opt/zimbra/ssl/zimbra/commercial/commercial.key
+chown zimbra:zimbra /opt/zimbra/ssl/zimbra/commercial/commercial.key
+cd /opt/zimbra/ssl/letsencrypt
+/opt/zimbra/bin/zmcertmgr deploycrt comm cert.pem chain.pem
+zmcontrol restart
