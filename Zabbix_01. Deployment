@@ -90,7 +90,7 @@ dnf -y zabbix-apache-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent
 
 # Create Database for Zabbix
 mysql -u root -p
-> CREATE DATABASE zabbix;
+> CREATE DATABASE zabbix CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 > GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@'localhost' IDENTIFIED BY 'P@ssw0rd';
 > FLUSH PRIVILEGES;
 > EXIT;
