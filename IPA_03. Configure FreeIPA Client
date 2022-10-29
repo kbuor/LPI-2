@@ -1,3 +1,9 @@
++------------------+                +-------------------+
+|     CentOS 7     |                |     CentOS 7      |
+|  ipa.kbuor.local |----------------| cli01.kbuor.local |
+|    10.0.14.101   |                |    10.0.4.102     |
++------------------+                +-------------------+
+
 # Prepare on FreeIPA Server
 ipa dnsrecord-add kbuor.local cli01 --a-rec 10.0.14.12
 ipa dnsrecord-add 14.0.10.in-addr.arpa 12 --ptr-rec cli01.kbuor.local.
