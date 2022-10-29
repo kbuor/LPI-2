@@ -1,3 +1,9 @@
++------------------+
+|     CentOS 7     |
+|  ipa.kbuor.local |
+|    10.0.14.101   |
++------------------+
+
 # Deploy FreeIPA Server
 yum install -y open-vm-tool epel-release wget unzip zip bind-utils net-tools
 yum update -y
