@@ -63,3 +63,6 @@ dig MX kbuor.website
             
 # Recommend run script via tmux
 ./install.sh
+
+sudo -u zimbra -i
+zmupdateauthkeys
