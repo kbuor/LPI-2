@@ -62,3 +62,4 @@ dig MX kbuor.website
             ;; MSG SIZE  rcvd: 63
             
 # Recommend run script via tmux
+./install.sh
