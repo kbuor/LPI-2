@@ -66,4 +66,18 @@ dnf module -y enable php:8.1
 dnf module -y install php:8.1/common
 php -v
 
+# Install Mariadb
+dnf install -y mariadb-server
+vi /etc/my.cnf.d/charset.cnf
+
+      [mysqld]
+      character-set-server = utf8mb4
+
+      [client]
+      default-character-set = utf8mb4
+
+systemctl start mariadb
+systemctl enable mariadb
+
+mysql_secure_installation
 
