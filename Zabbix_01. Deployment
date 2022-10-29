@@ -30,4 +30,31 @@ vi /var/www/html/index.html
       </html>
       
 
+# SSL for Apache
+dnf install -y certbot
+certbot certonly -d zabbix.kbuor.website
+dnf -y install mod_ssl
+vi /etc/httpd/conf.d/ssl.conf
 
+      # line 43 : uncomment
+      DocumentRoot "/var/www/html"
+      # line 44 : uncomment and specify hostname
+      ServerName zabbix.kbuor.website:443
+      # line 85 : 
+      SSLCertificateFile /etc/letsencrypt/live/zabbix.kbuor.website/cert.pem
+      # line 93 : 
+      SSLCertificateKeyFile /etc/letsencrypt/live/zabbix.kbuor.website/privkey.pem
+      # line 102 :
+      SSLCertificateChainFile /etc/letsencrypt/live/zabbix.kbuor.website/chain.pem
+
+vi /etc/httpd/conf.d/zabbix.kbuor.website.conf
+
+      <VirtualHost *:80>
+          DocumentRoot /var/www/html
+          ServerName zabbix.kbuor.website
+          RewriteEngine On
+          RewriteCond %{HTTPS} off
+          RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+      </VirtualHost>
+      
+systemctl restart httpd      
