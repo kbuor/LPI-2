@@ -72,3 +72,4 @@ exit
 # Enable ClamAV Antivirus
 zmprov mcf zimbraAttachmentsScanURL clam://localhost:3310/
 zmprov mcf zimbraAttachmentsScanEnabled TRUE
+/opt/zimbra/libexec/zmdkimkeyutil -a -d kbuor.website
