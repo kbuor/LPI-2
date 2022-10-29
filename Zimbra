@@ -1,1 +1,10 @@
-
+# Prepare CentOS
+# Disable Firewall
+# Disable SELinux
+yum install -y open-vm-tools epel-release wget zip bind-utils net-tools
+yum update -y
+# Check your hostname correctly
+hostname
+# Add to end of your host file your IP address and Hostname
+vi /etc/hosts
+(Ex: 103.89.85.24 mail.kbuor.website mail)
