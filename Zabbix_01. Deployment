@@ -1,1 +1,19 @@
+# Prepare CentOS Stream 9
+# Install Apache Front-End
+dnf install -y httpd
+vi /etc/httpd/conf/httpd.conf
 
+      # line 91 : change to admin's email address
+      ServerAdmin admin@kbuor.website
+      # line 100 : change to your server's name
+      ServerName zabbix.kbuor.website:80
+      # line 149 : change (remove [Indexes])
+      Options FollowSymLinks
+      # line 156 : change
+      AllowOverride All
+      # line 169 : add file name that it can access only with directory's name
+      DirectoryIndex index.html index.php index.cgi
+      # add follows to the end
+      # server's response header
+      ServerTokens Prod
+      
