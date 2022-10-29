@@ -1,6 +1,6 @@
 # Prepare on FreeIPA Server
 ipa dnsrecord-add kbuor.local cli01 --a-rec 10.0.14.12
-ipa dnsrecord-add 14.0.10.in-addr.arpa 12 --ptr-rec cli01.kbuor.local
+ipa dnsrecord-add 14.0.10.in-addr.arpa 12 --ptr-rec cli01.kbuor.local.
 
 # Configure FreeIPA Client
 yum install -y open-vm-tool epel-release wget unzip zip bind-utils net-tools
