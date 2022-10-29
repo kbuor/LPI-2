@@ -68,3 +68,7 @@ sudo -u zimbra -i
 zmupdateauthkeys
 exit
 /opt/zimbra/libexec/zmsyslogsetup
+
+# Enable ClamAV Antivirus
+zmprov mcf zimbraAttachmentsScanURL clam://localhost:3310/
+zmprov mcf zimbraAttachmentsScanEnabled TRUE
