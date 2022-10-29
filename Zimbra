@@ -10,3 +10,5 @@ vi /etc/hosts
 (Ex: 103.89.85.24 mail.kbuor.website mail)
 # Remove Postfix
 yum remove postfix -y
+# Install dependence package
+yum -y install unzip net-tools sysstat openssh-clients perl-core libaio nmap-ncat libstdc++.so.6
