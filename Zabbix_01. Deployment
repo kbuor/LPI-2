@@ -58,3 +58,12 @@ vi /etc/httpd/conf.d/zabbix.kbuor.website.conf
       </VirtualHost>
       
 systemctl restart httpd      
+
+# Install PHP
+dnf module list php
+dnf module reset php
+dnf module -y enable php:8.1
+dnf module -y install php:8.1/common
+php -v
+
+
