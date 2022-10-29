@@ -1,3 +1,9 @@
++------------------+                +-------------------+
+|     CentOS 7     |                |  Windows Server   |
+|  ipa.kbuor.local |----------------| cli02.kbuor.local |
+|    10.0.14.101   |                |    10.0.4.104     |
++------------------+                +-------------------+
+
 # Prepare on IPA Server
 ipa host-add cli02.kbuor.local --ip-address=10.0.14.13
 ipa dnsrecord-add kbuor.local cli02 --a-rec 10.0.14.13
