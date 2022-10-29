@@ -73,3 +73,10 @@ exit
 zmprov mcf zimbraAttachmentsScanURL clam://localhost:3310/
 zmprov mcf zimbraAttachmentsScanEnabled TRUE
 /opt/zimbra/libexec/zmdkimkeyutil -a -d kbuor.website
+
+# Add DNS record in DNS Server
+# DMARC:
+_DMARC IN v=DMARC1; p=reject; pct=100; rua=mailto:admin@kbuor.website
+# SPF:
+@ IN v=spf1 ip4:103.89.85.24 include:kbuor.website mx -all
+# DKIM
