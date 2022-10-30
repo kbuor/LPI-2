@@ -5,7 +5,7 @@
 +----------------------+
 
 # Prepare CentOS
-# Disable Firewall
+# Disable Firewall (FOR DEPLOYMENT ONLY)
 systemctl stop firewalld
 systemctl disable firewalld
 
