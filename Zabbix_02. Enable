@@ -1,0 +1,17 @@
+# Create new file: /etc/systemd/system/zabbix-server.service
+
+[Unit]
+Description=Zabbix Server
+After=syslog.target network.target mariadb.service
+
+[Service]
+Type=forking
+Restart=always
+User=zabbix
+ExecStart=/usr/local/sbin/zabbix_server
+ExecReload=/usr/local/sbin/zabbix_server -R config_cache_reload
+RemainAfterExit=yes
+PIDFile=/tmp/zabbix_server.pid
+
+[Install]
+WantedBy=multi-user.target
