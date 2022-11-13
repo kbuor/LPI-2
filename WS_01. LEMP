@@ -5,8 +5,8 @@
 # P = PHP
 
 # Prepare Linux (Centos 7)
-systemctl install -y open-vm-tools git wget unzip zip epel-release
-systemctl update -y
+yum install -y open-vm-tools git wget unzip zip epel-release
+yum update -y
 systemctl stop firewalld
 systemctl disable firewalld
 vi /etc/sysconfig/selinux
